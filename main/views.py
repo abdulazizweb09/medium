@@ -8,7 +8,7 @@ class HomeView(View):
     def get(self,request):
         if request.user.is_authenticated:
             user=request.user
-            post=Test.objects.all()
+            post=Test.objects.all().order_by('-created_at')
         
             avatar=None
             if Profile.objects.get(user=user):
