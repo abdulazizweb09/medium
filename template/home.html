@@ -8,11 +8,12 @@
           <button class="tab-button pb-4 text-sm font-medium text-gray-500 hover:text-gray-700">Featured</button>
         </div>
 
-        <div class="article-card mb-10">
+        {% for p in post %}
+<div class="article-card mb-10">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold">A</div>
             <div>
-              <p class="text-sm font-medium">Anantm</p>
+              <p class="text-sm font-medium">{{p.user}}</p>
             </div>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -33,73 +34,8 @@
             </div>
           </div>
         </div>
-
-        <div class="article-card mb-10">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="text-orange-500 text-xl">📊</div>
-            <div class="text-sm">
-              <span class="font-medium">In Data Science Collective by Marina Wyss</span>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div class="md:col-span-7">
-              <h2 class="text-2xl font-bold leading-tight mb-3">Should You Still Learn to Code in 2026?</h2>
-              <p class="text-gray-600 line-clamp-3 mb-4">The answer isn't as obvious as I used to believe.</p>
-              <div class="flex items-center gap-4 text-sm text-gray-500">
-                <span>Feb 23</span>
-                <span class="flex items-center gap-1">2.6K</span>
-                <span>125</span>
-              </div>
-            </div>
-            <div class="md:col-span-5">
-              <img src="https://picsum.photos/id/201/600/340" alt="Coding" 
-                   class="w-full h-48 md:h-40 object-cover rounded-xl">
-            </div>
-          </div>
-        </div>
-
-        <div class="article-card mb-10">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="text-yellow-500 text-xl">JS</div>
-            <div class="text-sm">
-              <span class="font-medium">In JavaScript in Plain English by James O'Reilly</span>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div class="md:col-span-7">
-              <h2 class="text-2xl font-bold leading-tight mb-3">How to automate modernization with Antigravity and multi-agent orchestration</h2>
-              <p class="text-gray-600 line-clamp-3 mb-4">Learn how to modernize any legacy monolith into modern architectures using Google Antigravity and customized Agent...</p>
-              <div class="flex items-center gap-4 text-sm text-gray-500">
-                <span>5d ago</span>
-                <span>251</span>
-                <span>1</span>
-              </div>
-            </div>
-            <div class="md:col-span-5">
-              <img src="https://picsum.photos/id/180/600/340" alt="Tech" 
-                   class="w-full h-48 md:h-40 object-cover rounded-xl">
-            </div>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="flex items-center gap-3 mb-3">
-            <img src="https://picsum.photos/id/64/32/32" class="w-8 h-8 rounded-full">
-            <div class="text-sm">
-              <span class="font-medium">Leo Godin</span>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div class="md:col-span-7">
-              <h2 class="text-2xl font-bold leading-tight mb-3">Claude Code is Great</h2>
-              <p class="text-gray-600 line-clamp-3 mb-4">You Just Need to Learn How to Use It</p>
-            </div>
-            <div class="md:col-span-5">
-              <img src="https://picsum.photos/id/201/600/340" alt="Claude" 
-                   class="w-full h-48 md:h-40 object-cover rounded-xl">
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+        
       </div>
     </div>
 

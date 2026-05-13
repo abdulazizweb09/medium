@@ -8,6 +8,7 @@ class HomeView(View):
     def get(self,request):
         if request.user.is_authenticated:
             user=request.user
+            post=Test.objects.all()
         
             avatar=None
             if Profile.objects.get(user=user):
@@ -18,6 +19,7 @@ class HomeView(View):
             context={
                 'user':user,
                 'avatar':avatar,
+                'post':post,
             }
 
             return render(request,'home.html',context)
