@@ -1,0 +1,131 @@
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium - Ro'yxatdan o'tish</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+        }
+
+        .serif {
+            font-family: 'Source Serif Pro', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <div class="min-h-screen flex flex-col items-center justify-center px-4">
+
+        <div class="max-w-md w-full text-center">
+
+            <h1 class="serif text-[42px] font-medium leading-tight mb-16 tracking-tight">
+                Join Medium.
+            </h1>
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="space-y-3 mb-10">
+
+                <button
+                    class="w-full flex items-center justify-between border border-gray-300 rounded-full py-2.5 px-6 hover:border-gray-900 transition-all duration-200"
+                >
+                    <img
+                        src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                        class="w-5 h-5"
+                        alt="Google"
+                    >
+
+                    <span class="flex-1 text-sm font-normal">
+                        Sign up with Google
+                    </span>
+                </button>
+
+                <button
+                    class="w-full flex items-center justify-between border border-gray-300 rounded-full py-2.5 px-6 hover:border-gray-900 transition-all duration-200"
+                >
+                    <svg
+                        class="w-5 h-5 text-blue-600"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+
+                    <span class="flex-1 text-sm font-normal">
+                        Sign up with Facebook
+                    </span>
+                </button>
+
+                <a
+                    href="/accounts/signup/"
+                    class="w-full flex items-center justify-between border border-gray-300 rounded-full py-2.5 px-6 hover:border-gray-900 transition-all duration-200"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.5"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                    </svg>
+
+                    <span class="flex-1 text-sm font-normal">
+                        Sign up with email
+                    </span>
+                </a>
+
+            </div>
+            </form>
+
+            <p class="text-sm text-gray-900 mb-12">
+                Already have an account?
+
+                <a
+                    href="/accounts/login/"
+                    class="text-green-700 font-bold hover:text-green-800"
+                >
+                    Sign in
+                </a>
+            </p>
+
+            <div class="text-xs text-gray-500 leading-relaxed px-10">
+                Click “Sign up” to agree to Medium’s
+
+                <a href="#" class="underline">
+                    Terms of Service
+                </a>
+
+                and acknowledge that Medium’s
+
+                <a href="#" class="underline">
+                    Privacy Policy
+                </a>
+
+                applies to you.
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

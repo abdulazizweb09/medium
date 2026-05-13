@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Created page</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .django-ckeditor-widget {
+            width: 100% !important;
+        }
+
+        iframe {
+            width: 100% !important;
+            min-height: 500px !important;
+            border-radius: 14px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <div class="max-w-4xl mx-auto px-4 py-10">
+
+        <form method="POST">
+    {% csrf_token %}
+
+    <input type="text"
+           name="title"
+           placeholder="Title"
+           class="border p-2 w-full mb-4 rounded">
+
+    {{ form.media }}
+
+    <div class="rounded-2xl overflow-hidden border border-gray-300">
+        {{ form.body }}
+    </div>
+
+    <button type="submit"
+            class="bg-black text-white px-6 py-2 mt-4 rounded">
+        Save
+    </button>
+</form>
+
+    </div>
+
+</body>
+</html>
