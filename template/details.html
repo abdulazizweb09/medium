@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-6 pt-12 pb-24">
+
+  <div class="mb-10">
+
+    <div class="flex items-center gap-3 text-sm text-zinc-500 mb-6">
+
+      <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">
+        Blog
+      </span>
+
+      <span>{{ post.created_at|date:"d M Y" }}</span>
+
+
+    </div>
+
+    <h1 class="article-title text-5xl leading-tight font-bold mb-6">
+      {{ post.title }}
+    </h1>
+
+    <div class="flex items-center gap-4">
+
+      {% if post.author.profile.avatar %}
+      <img src="{{ post.author.profile.avatar }}"
+           class="w-12 h-12 rounded-full object-cover border-2 border-white shadow">
+      {% else %}
+      <img src="https://i.pravatar.cc/128"
+           class="w-12 h-12 rounded-full object-cover border-2 border-white shadow">
+      {% endif %}
+
+      <div>
+        <div class="font-semibold">
+          {{ post.author.username }}
+        </div>
+
+        <div class="text-sm text-zinc-500">
+          @{{ post.author.username }}
+        </div>
+      </div>
+
+      <button class="ml-auto px-6 py-2 border border-zinc-300 hover:border-black rounded-full text-sm font-medium transition">
+        Follow
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="mb-12 rounded-2xl overflow-hidden shadow-xl">
+    <img src="https://picsum.photos/1200/630?random={{ post.id }}"
+         class="w-full h-auto object-cover"
+         alt="">
+  </div>
+
+  <div class="medium-content prose prose-zinc max-w-none text-[1.1rem] leading-relaxed">
+
+    {{ post.body|safe }}
+
+  </div>
+
+  <div class="flex items-center justify-between border-t border-b py-6 my-16">
+
+    <div class="flex items-center gap-8">
+
+      <button class="flex items-center gap-2 text-zinc-500 hover:text-red-500 transition">
+        <i class="fa-solid fa-hands-clapping text-2xl"></i>
+        <span class="font-medium">0</span>
+      </button>
+
+      <button class="flex items-center gap-2 text-zinc-500 hover:text-black transition">
+        <i class="fa-solid fa-comment-dots text-2xl"></i>
+        <span class="font-medium">0</span>
+      </button>
+
+      <button class="flex items-center gap-2 text-zinc-500 hover:text-black transition">
+        <p>views</p>
+        <span class="font-medium">{{post.views}}</span>
+      </button>
+
+    </div>
+
+    <div class="flex gap-6 text-2xl text-zinc-400">
+      <i class="fa-solid fa-bookmark hover:text-black cursor-pointer transition"></i>
+      <i class="fa-solid fa-share-nodes hover:text-black cursor-pointer transition"></i>
+    </div>
+
+  </div>
+
+  <div class="bg-white p-8 rounded-3xl border mb-16">
+
+    <div class="flex gap-6">
+
+      {% if post.author.profile.avatar %}
+      <img src="{{ post.author.profile.avatar }}"
+           class="w-20 h-20 rounded-2xl">
+      {% else %}
+      <img src="https://i.pravatar.cc/128"
+           class="w-20 h-20 rounded-2xl">
+      {% endif %}
+
+      <div>
+
+        <div class="font-semibold text-xl">
+          {{ post.author.username }}
+        </div>
+
+        <div class="text-zinc-500 mt-1">
+          Blog author
+        </div>
+
+        <button class="mt-4 px-6 py-2.5 bg-black text-white rounded-full text-sm font-medium">
+          Profilga o‘tish
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}

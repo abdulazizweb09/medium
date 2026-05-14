@@ -9,12 +9,21 @@ class HomeView(View):
         if request.user.is_authenticated:
             user=request.user
             post=Test.objects.all().order_by('-created_at')
-        
+            social = user.socialaccount_set.filter(provider='google').first()
             avatar=None
-            if Profile.objects.get(user=user):
-                avatar=Profile.objects.get(user=user)
 
-            print(user)
+
+            if social and social.get_avatar_url():
+                avatar = social.get_avatar_url()
+
+                if Profile.objects.get(user=user):
+                    profile = Profile.objects.get(user=user)
+                    profile.avatar = avatar
+                    profile.save()
+
+            else:
+                profile = Profile.objects.get(user=user)
+                avatar=profile.avatar    
         
             context={
                 'user':user,
@@ -47,3 +56,26 @@ class EditView(View):
         )
 
         return redirect('/')
+    
+
+class DetailsView(View):
+    def get(self,request,id):
+        post=Test.objects.get(id=id)
+
+        session_key = f'viewed_post_{post.id}'
+
+        if not request.session.get(session_key):
+            post.views += 1
+            post.save()
+
+            request.session[session_key] = True
+
+        context={
+            'post':post,
+        }
+
+        return render(request,'details.html',context)
+    
+    def post(self,request):
+
+        pass

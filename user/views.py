@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import *
+from main.models import Profile
 # Create your views here.
 
 class LoginView(View):
@@ -12,10 +13,8 @@ class ProfileView(View):
         profile=ProfileView(user=user)
         social = user.socialaccount_set.filter(provider='google').first()
 
-        avatar = None
-        if social:
-            avatar = social.get_avatar_url()
-
+        avatar = Profile.objects.get(user=user).avatar
+        print(profile)
 
         context={
             'name':user,

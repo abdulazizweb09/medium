@@ -7,4 +7,5 @@ urlpatterns = [
     path('',HomeView.as_view(),name='home'),
     path('p/',EditView.as_view(),name='create'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('details/<int:id>/',DetailsView.as_view(),name='details')
 ]
