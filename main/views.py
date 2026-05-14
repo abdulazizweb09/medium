@@ -61,7 +61,7 @@ class EditView(View):
 class DetailsView(View):
     def get(self,request,id):
         post=Test.objects.get(id=id)
-
+        comments = post.comments.all().order_by('-created_at')
         session_key = f'viewed_post_{post.id}'
 
         if not request.session.get(session_key):
@@ -72,10 +72,23 @@ class DetailsView(View):
 
         context={
             'post':post,
+            'comments':comments,
         }
 
         return render(request,'details.html',context)
     
-    def post(self,request):
+    def post(self,request,id):
+        pos=Test.objects.get(id=id)
+        body = request.POST.get('body')
 
-        pass
+        if body:
+            Comment.objects.create(
+                user=request.user,
+                post=pos,
+                body=body,
+            )
+
+            return redirect('details',id=pos.id)
+        return redirect('details',id=pos.id)
+
+      

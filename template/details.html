@@ -69,11 +69,106 @@
         <span class="font-medium">0</span>
       </button>
 
-      <button class="flex items-center gap-2 text-zinc-500 hover:text-black transition">
+      <!-- <button class="flex items-center gap-2 text-zinc-500 hover:text-black transition">
         <i class="fa-solid fa-comment-dots text-2xl"></i>
         <span class="font-medium">0</span>
-      </button>
+      </button> -->
+<div class="max-w-4xl mx-auto p-6">
 
+    <div>
+      <label for="responses-toggle" 
+             class="cursor-pointer inline-flex items-center gap-2 text-gray-700 hover:text-black font-medium">
+        <i class="fa-solid fa-comment"></i>
+        <span>Responses (3)</span>
+      </label>
+    </div>
+
+
+    <input type="checkbox" id="responses-toggle" class="peer hidden">
+
+
+    <div class="peer-checked:block hidden fixed inset-0 bg-black/50 z-50 flex justify-end">
+      <div class="bg-white w-full max-w-md h-full overflow-hidden shadow-2xl flex flex-col">
+        
+
+        <div class="flex items-center justify-between border-b px-6 py-4 bg-white">
+          <div class="font-semibold text-xl">Responses (3)</div>
+          <label for="responses-toggle" 
+                 class="cursor-pointer text-2xl text-gray-400 hover:text-gray-600 leading-none">
+            ✕
+          </label>
+        </div>
+
+
+        <div class="p-6 border-b bg-white">
+          <div class="flex gap-3">
+            <img src="https://i.pravatar.cc/48?u=xadyatillo" class="w-8 h-8 rounded-full" alt="">
+            <div class="flex-1">
+              <textarea rows="2" 
+                        class="w-full border border-gray-300 focus:border-gray-400 rounded-xl px-4 py-3 text-[15px] resize-none focus:outline-none"
+                        placeholder="What are your thoughts?"></textarea>
+              <div class="flex justify-end gap-3 mt-3">
+                <label for="responses-toggle" 
+                       class="px-5 py-2 text-gray-500 hover:bg-gray-100 rounded-full cursor-pointer text-sm font-medium">
+                  Cancel
+                </label>
+                <label for="responses-toggle" 
+                       class="bg-green-700 text-white px-6 py-2 rounded-full text-sm font-medium cursor-pointer hover:bg-green-800">
+                  Respond
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="flex-1 overflow-y-auto p-6 space-y-8 bg-[#f9f9f9]">
+          
+
+          <div class="flex gap-3">
+            <img src="https://i.pravatar.cc/48?u=1" class="w-8 h-8 rounded-full mt-1" alt="">
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <span class="font-medium text-sm">Steady Thunder</span>
+                <span class="text-xs text-gray-500">19 hours ago</span>
+              </div>
+              <p class="text-[15px] text-gray-700 mt-1 leading-relaxed">
+                Great piece! I remember the onset of phone book obsolescence...
+              </p>
+              <div class="flex items-center gap-5 text-xs text-gray-500 mt-3">
+                <button class="flex items-center gap-1 hover:text-red-600">
+                  <i class="fa-regular fa-heart"></i> 11
+                </button>
+                <button class="hover:text-green-700">Reply</button>
+              </div>
+            </div>
+          </div>
+
+  
+          <div class="flex gap-3">
+            <img src="https://i.pravatar.cc/48?u=2" class="w-8 h-8 rounded-full mt-1" alt="">
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <span class="font-medium text-sm">Eric PASCUAL</span>
+                <span class="text-xs text-gray-500">24 mins ago</span>
+              </div>
+              <p class="text-[15px] text-gray-700 mt-1 leading-relaxed">
+                In France we have had an intermediate between paper Yellow Pages...
+              </p>
+              <div class="flex items-center gap-5 text-xs text-gray-500 mt-3">
+                <button class="flex items-center gap-1 hover:text-red-600">
+                  <i class="fa-regular fa-heart"></i> 5
+                </button>
+                <button class="hover:text-green-700">Reply</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
       <button class="flex items-center gap-2 text-zinc-500 hover:text-black transition">
         <p>views</p>
         <span class="font-medium">{{post.views}}</span>
@@ -121,4 +216,121 @@
   </div>
 
 </div>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medium Responses Sidebar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    body { font-family: 'Inter', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <div class="max-w-4xl mx-auto p-6">
+
+    <div class="mt-12">
+      <label for="responses-toggle" 
+             class="cursor-pointer inline-flex items-center gap-2 text-gray-700 hover:text-black font-medium">
+        <i class="fa-solid fa-comment"></i>
+        <span>Responses (3)</span>
+      </label>
+    </div>
+
+
+    <input type="checkbox" id="responses-toggle" class="peer hidden">
+
+
+    <div class="peer-checked:block hidden fixed inset-0 bg-black/50 z-50 flex justify-end">
+      <div class="bg-white w-full max-w-md h-full overflow-hidden shadow-2xl flex flex-col">
+        
+
+        <div class="flex items-center justify-between border-b px-6 py-4 bg-white">
+          <div class="font-semibold text-xl">Responses (3)</div>
+          <label for="responses-toggle" 
+                 class="cursor-pointer text-2xl text-gray-400 hover:text-gray-600 leading-none">
+            ✕
+          </label>
+        </div>
+
+
+        <div class="p-6 border-b bg-white">
+          <div class="flex gap-3">
+            <img src="https://i.pravatar.cc/48?u=xadyatillo" class="w-8 h-8 rounded-full" alt="">
+            <div class="flex-1">
+              <textarea rows="2" 
+                        class="w-full border border-gray-300 focus:border-gray-400 rounded-xl px-4 py-3 text-[15px] resize-none focus:outline-none"
+                        placeholder="What are your thoughts?"></textarea>
+              <div class="flex justify-end gap-3 mt-3">
+                <label for="responses-toggle" 
+                       class="px-5 py-2 text-gray-500 hover:bg-gray-100 rounded-full cursor-pointer text-sm font-medium">
+                  Cancel
+                </label>
+                <label for="responses-toggle" 
+                       class="bg-green-700 text-white px-6 py-2 rounded-full text-sm font-medium cursor-pointer hover:bg-green-800">
+                  Respond
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="flex-1 overflow-y-auto p-6 space-y-8 bg-[#f9f9f9]">
+          
+
+          <div class="flex gap-3">
+            <img src="https://i.pravatar.cc/48?u=1" class="w-8 h-8 rounded-full mt-1" alt="">
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <span class="font-medium text-sm">Steady Thunder</span>
+                <span class="text-xs text-gray-500">19 hours ago</span>
+              </div>
+              <p class="text-[15px] text-gray-700 mt-1 leading-relaxed">
+                Great piece! I remember the onset of phone book obsolescence...
+              </p>
+              <div class="flex items-center gap-5 text-xs text-gray-500 mt-3">
+                <button class="flex items-center gap-1 hover:text-red-600">
+                  <i class="fa-regular fa-heart"></i> 11
+                </button>
+                <button class="hover:text-green-700">Reply</button>
+              </div>
+            </div>
+          </div>
+
+  
+          <div class="flex gap-3">
+            <img src="https://i.pravatar.cc/48?u=2" class="w-8 h-8 rounded-full mt-1" alt="">
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <span class="font-medium text-sm">Eric PASCUAL</span>
+                <span class="text-xs text-gray-500">24 mins ago</span>
+              </div>
+              <p class="text-[15px] text-gray-700 mt-1 leading-relaxed">
+                In France we have had an intermediate between paper Yellow Pages...
+              </p>
+              <div class="flex items-center gap-5 text-xs text-gray-500 mt-3">
+                <button class="flex items-center gap-1 hover:text-red-600">
+                  <i class="fa-regular fa-heart"></i> 5
+                </button>
+                <button class="hover:text-green-700">Reply</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html> -->
 {% endblock %}
+
